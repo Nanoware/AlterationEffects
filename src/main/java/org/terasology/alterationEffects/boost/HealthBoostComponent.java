@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 MovingBlocks
+ * Copyright 2016 MovingBlocks
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,12 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.terasology.alterationEffects.breath;
+package org.terasology.alterationEffects.boost;
 
 import org.terasology.entitySystem.Component;
 
 /**
- * This is the component added to entities with the water breathing effect.
+ * This is the component added to entities with the health boost effect.
  */
-public class WaterBreathingComponent implements Component {
+public class HealthBoostComponent implements Component {
+    /** The amount the max health should be boosted by. 1 is equivalent to +1% max health on the applied entity. */
+    public int boostAmount;
+
+    /**
+     * The last time this health boost was applied on the entity. This is also modified when the effect itself is
+     * modified.
+     */
+    public long lastUseTime;
 }

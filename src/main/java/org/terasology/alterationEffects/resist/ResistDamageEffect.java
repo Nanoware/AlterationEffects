@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 MovingBlocks
+ * Copyright 2016 MovingBlocks
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,12 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.terasology.alterationEffects.breath;
+package org.terasology.alterationEffects.resist;
 
-import org.terasology.entitySystem.Component;
+import org.terasology.reflection.MappedContainer;
 
 /**
- * This is the component added to entities with the water breathing effect.
+ * This class is used for storing a damage type resistance.
  */
-public class WaterBreathingComponent implements Component {
+@MappedContainer
+public class ResistDamageEffect {
+    /** The damage type that will be resisted. */
+    public String resistType;
+
+    /** The amount of damage that'll be resisted (i.e. subtracted). */
+    public int resistAmount;
 }

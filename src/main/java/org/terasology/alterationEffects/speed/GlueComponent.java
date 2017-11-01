@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 MovingBlocks
+ * Copyright 2016 MovingBlocks
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,12 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.terasology.alterationEffects.breath;
+package org.terasology.alterationEffects.speed;
 
 import org.terasology.entitySystem.Component;
 
-/**
- * This is the component added to entities with the water breathing effect.
- */
-public class WaterBreathingComponent implements Component {
+/** Meant to represent a stickying effect of some sort, as if stuck in a spiderweb. */
+public class GlueComponent implements Component {
+    /** This affects how strong the glue effect is by multiplying against the base value. */
+    public float multiplier;
 }

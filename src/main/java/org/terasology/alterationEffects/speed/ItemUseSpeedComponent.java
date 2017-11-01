@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 MovingBlocks
+ * Copyright 2016 MovingBlocks
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,12 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.terasology.alterationEffects.breath;
-
+package org.terasology.alterationEffects.speed;
 import org.terasology.entitySystem.Component;
 
 /**
- * This is the component added to entities with the water breathing effect.
+ * This is the component added to entities with the item use speed effect.
  */
-public class WaterBreathingComponent implements Component {
+public class ItemUseSpeedComponent implements Component {
+    /** This will affect how much the base item use speed is added by. */
+    public float modifier; // TODO: Won't work until AlterationEffects has something else in addition to magnitude.
+
+    /**
+     * This affects how much the base item use speed is multiplied by. 1 is normal speed, 0 is immobility, and 2 is
+     * double speed.
+     */
+    public float multiplier;
 }

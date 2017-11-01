@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 MovingBlocks
+ * Copyright 2016 MovingBlocks
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,12 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.terasology.alterationEffects.breath;
+package org.terasology.alterationEffects.damageOverTime;
 
 import org.terasology.entitySystem.Component;
+import org.terasology.reflection.MappedContainer;
 
 /**
- * This is the component added to entities with the water breathing effect.
+ * This class is used for storing a damage over time (DOT) effect.
  */
-public class WaterBreathingComponent implements Component {
+@MappedContainer
+public class DamageOverTimeEffect {
+    /** The type of damage that will be inflicted. */
+    public String damageType;
+
+    /** The amount of damage that will be inflicted upon on the entity per tick. */
+    public int damageAmount;
+
+    /** The last time this effect dealt damage. */
+    public long lastDamageTime;
 }

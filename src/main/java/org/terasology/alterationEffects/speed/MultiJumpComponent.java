@@ -1,5 +1,5 @@
 /*
- * Copyright 2014 MovingBlocks
+ * Copyright 2016 MovingBlocks
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,12 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.terasology.alterationEffects.breath;
-
+package org.terasology.alterationEffects.speed;
 import org.terasology.entitySystem.Component;
 
 /**
- * This is the component added to entities with the water breathing effect.
+ * This is the component added to entities with the multi jump effect.
  */
-public class WaterBreathingComponent implements Component {
+public class MultiJumpComponent implements Component {
+    /** This will affect how much the base number of multi jumps is added by. */
+    public float modifier; // TODO: Won't work until AlterationEffects has something else in addition to magnitude.
+
+    /** This affects how much the base number of max jumps is multiplied by. */
+    public float multiplier;
 }
+
